@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --true-black: #050816;
+  --dark: #111a30;
+
+  --primary-bg: #0a1020;
+  --secondary-bg: #1a2440;
+
+  --primary-text: #fff;
+  --secondary-text: #888;
+
+  --cta-blue: #2de2e6;
+  --cta-blue-progress-bar: #22d3ee;
+  --cta-light-blue: #8b5cf6;
+  --blue-200: #a5f3fc;
+  --blue-300: #22d3ee;
+
+  --hex-gray-10: #0d1426;
+  --hex-gray-9: #151e36;
+  --hex-gray-8: #111a30;
+  --hex-gray-4: #9aa6c4;
+
+  --bg-white-5: rgba(255, 255, 255, 0.05);
+}

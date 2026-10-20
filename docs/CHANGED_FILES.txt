@@ -1,0 +1,142 @@
+Only in .github/workflows: android-debug.yml
+Only in .github/workflows: cla.yml
+Files .gitignore and .gitignore differ
+Files .version and .version differ
+Only in src_in/anythingllm-mobile-main: BUILDING.md
+Only in src_in/anythingllm-mobile-main: CHANGELOG.md
+Only in src_in/anythingllm-mobile-main: NOTICE.md
+Only in src_in/anythingllm-mobile-main: PROJECT_STATUS.md
+Files README.md and README.md differ
+Only in src_in/anythingllm-mobile-main: README.upstream.md
+Only in src_in/anythingllm-mobile-main: SOURCE.md
+Files android/app/build.gradle and android/app/build.gradle differ
+Only in android/app: google-services.json
+Files android/app/proguard-rules.pro and android/app/proguard-rules.pro differ
+Files android/app/src/main/AndroidManifest.xml and android/app/src/main/AndroidManifest.xml differ
+Files android/app/src/main/res/values/colors.xml and android/app/src/main/res/values/colors.xml differ
+Files android/app/src/main/res/values/strings.xml and android/app/src/main/res/values/strings.xml differ
+Files android/build.gradle and android/build.gradle differ
+Files android/fastlane/Fastfile and android/fastlane/Fastfile differ
+Files app.json and app.json differ
+Only in src_in/anythingllm-mobile-main: brand
+Only in orig_src: firebase.json
+Files global.css and global.css differ
+Files index.js and index.js differ
+Files package.json and package.json differ
+Only in scripts: checkBrandFonts.js
+Only in src/assets/logo: nexvora-mark.png
+Files src/assets/onboarding/bg-blobs.png and src/assets/onboarding/bg-blobs.png differ
+Files src/assets/onboarding/welcome.png and src/assets/onboarding/welcome.png differ
+Files src/assistant/AssistantApp.tsx and src/assistant/AssistantApp.tsx differ
+Files src/assistant/index.ts and src/assistant/index.ts differ
+Files src/components/AttachmentChip/index.tsx and src/components/AttachmentChip/index.tsx differ
+Files src/components/ChangelogModal/index.tsx and src/components/ChangelogModal/index.tsx differ
+Files src/components/ChatGPTSignIn/index.tsx and src/components/ChatGPTSignIn/index.tsx differ
+Files src/components/ErrorBoundary/index.tsx and src/components/ErrorBoundary/index.tsx differ
+Files src/components/Highlights/index.tsx and src/components/Highlights/index.tsx differ
+Files src/components/HuggingFaceImport/AddCard.tsx and src/components/HuggingFaceImport/AddCard.tsx differ
+Files src/components/HuggingFaceImport/index.tsx and src/components/HuggingFaceImport/index.tsx differ
+Files src/components/LLMSelection/ProviderSelection/index.tsx and src/components/LLMSelection/ProviderSelection/index.tsx differ
+Files src/components/LowMemoryModal/index.tsx and src/components/LowMemoryModal/index.tsx differ
+Files src/components/ModelCard/ProviderSections.tsx and src/components/ModelCard/ProviderSections.tsx differ
+Files src/components/ModelCard/index.tsx and src/components/ModelCard/index.tsx differ
+Files src/components/SafeView/index.tsx and src/components/SafeView/index.tsx differ
+Files src/components/SheetMenu/index.tsx and src/components/SheetMenu/index.tsx differ
+Files src/components/TopBar/ModelChip/ProviderConnectForm.tsx and src/components/TopBar/ModelChip/ProviderConnectForm.tsx differ
+Files src/components/TopBar/ModelChip/ProviderPicker.tsx and src/components/TopBar/ModelChip/ProviderPicker.tsx differ
+Files src/components/TopBar/ModelChip/index.tsx and src/components/TopBar/ModelChip/index.tsx differ
+Files src/components/TopBar/ThreadMenu/MemoriesPage.tsx and src/components/TopBar/ThreadMenu/MemoriesPage.tsx differ
+Files src/components/TopBar/index.tsx and src/components/TopBar/index.tsx differ
+Files src/components/WorkspaceDrawer/SidebarContent/WorkspaceItem/ThreadItem/index.tsx and src/components/WorkspaceDrawer/SidebarContent/WorkspaceItem/ThreadItem/index.tsx differ
+Files src/components/WorkspaceDrawer/SidebarContent/WorkspaceItem/index.tsx and src/components/WorkspaceDrawer/SidebarContent/WorkspaceItem/index.tsx differ
+Files src/components/WorkspaceDrawer/SidebarContent/index.tsx and src/components/WorkspaceDrawer/SidebarContent/index.tsx differ
+Files src/locales/de/common.json and src/locales/de/common.json differ
+Files src/locales/en/common.json and src/locales/en/common.json differ
+Files src/locales/es/common.json and src/locales/es/common.json differ
+Files src/locales/fr/common.json and src/locales/fr/common.json differ
+Files src/locales/hi/common.json and src/locales/hi/common.json differ
+Files src/locales/id/common.json and src/locales/id/common.json differ
+Files src/locales/it/common.json and src/locales/it/common.json differ
+Files src/locales/ja/common.json and src/locales/ja/common.json differ
+Files src/locales/ko/common.json and src/locales/ko/common.json differ
+Files src/locales/nl/common.json and src/locales/nl/common.json differ
+Files src/locales/pl/common.json and src/locales/pl/common.json differ
+Files src/locales/pt-BR/common.json and src/locales/pt-BR/common.json differ
+Files src/locales/ru/common.json and src/locales/ru/common.json differ
+Files src/locales/tr/common.json and src/locales/tr/common.json differ
+Files src/locales/vi/common.json and src/locales/vi/common.json differ
+Files src/locales/zh/common.json and src/locales/zh/common.json differ
+Files src/locales/zh-TW/common.json and src/locales/zh-TW/common.json differ
+Files src/quickContext/QuickContextApp.tsx and src/quickContext/QuickContextApp.tsx differ
+Files src/screens/ConnectToInstance/Main/index.tsx and src/screens/ConnectToInstance/Main/index.tsx differ
+Files src/screens/ConnectToInstance/Verify/index.tsx and src/screens/ConnectToInstance/Verify/index.tsx differ
+Files src/screens/Dev/components/index.tsx and src/screens/Dev/components/index.tsx differ
+Files src/screens/Home/index.tsx and src/screens/Home/index.tsx differ
+Files src/screens/Onboarding/DataHandling/index.tsx and src/screens/Onboarding/DataHandling/index.tsx differ
+Files src/screens/Onboarding/ModelSelection/Simple/SimpleModelCard/index.tsx and src/screens/Onboarding/ModelSelection/Simple/SimpleModelCard/index.tsx differ
+Files src/screens/Onboarding/ModelSelection/index.tsx and src/screens/Onboarding/ModelSelection/index.tsx differ
+Files src/screens/Onboarding/Survey/index.tsx and src/screens/Onboarding/Survey/index.tsx differ
+Files src/screens/Onboarding/Welcome/index.tsx and src/screens/Onboarding/Welcome/index.tsx differ
+Files src/screens/ScheduledJobs/JobList/index.tsx and src/screens/ScheduledJobs/JobList/index.tsx differ
+Files src/screens/ScheduledJobs/components/index.tsx and src/screens/ScheduledJobs/components/index.tsx differ
+Only in src/screens/UserSettings: About
+Files src/screens/UserSettings/AdvancedModelPreferences/index.tsx and src/screens/UserSettings/AdvancedModelPreferences/index.tsx differ
+Files src/screens/UserSettings/AdvancedModelPreferences/providers/LMStudioOptions/index.tsx and src/screens/UserSettings/AdvancedModelPreferences/providers/LMStudioOptions/index.tsx differ
+Files src/screens/UserSettings/AdvancedModelPreferences/providers/OllamaOptions/index.tsx and src/screens/UserSettings/AdvancedModelPreferences/providers/OllamaOptions/index.tsx differ
+Files src/screens/UserSettings/AdvancedModelPreferences/providers/genericOpenAiOptions/index.tsx and src/screens/UserSettings/AdvancedModelPreferences/providers/genericOpenAiOptions/index.tsx differ
+Files src/screens/UserSettings/AdvancedModelPreferences/providers/nativeOptions/index.tsx and src/screens/UserSettings/AdvancedModelPreferences/providers/nativeOptions/index.tsx differ
+Files src/screens/UserSettings/AnonymousTelemetry/index.tsx and src/screens/UserSettings/AnonymousTelemetry/index.tsx differ
+Files src/screens/UserSettings/Assistant/index.tsx and src/screens/UserSettings/Assistant/index.tsx differ
+Files src/screens/UserSettings/Language/index.tsx and src/screens/UserSettings/Language/index.tsx differ
+Files src/screens/UserSettings/Main/ApkVersion/index.tsx and src/screens/UserSettings/Main/ApkVersion/index.tsx differ
+Files src/screens/UserSettings/Main/index.tsx and src/screens/UserSettings/Main/index.tsx differ
+Files src/screens/UserSettings/SpecialTools/index.tsx and src/screens/UserSettings/SpecialTools/index.tsx differ
+Files src/screens/UserSettings/ToolAutoApprovals/index.tsx and src/screens/UserSettings/ToolAutoApprovals/index.tsx differ
+Files src/screens/UserSettings/index.tsx and src/screens/UserSettings/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/CitationsActionSheet/Favicon/index.tsx and src/screens/WorkspaceChat/ChatHistory/CitationsActionSheet/Favicon/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/CitationsActionSheet/index.tsx and src/screens/WorkspaceChat/ChatHistory/CitationsActionSheet/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/DraftSheet/index.tsx and src/screens/WorkspaceChat/ChatHistory/DraftSheet/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/EmptyList/index.tsx and src/screens/WorkspaceChat/ChatHistory/EmptyList/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/Actions/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/Actions/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/ActivityChain/ChainOfThought.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/ActivityChain/ChainOfThought.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/DraftCards/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/DraftCards/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/FileDownloadCard/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/FileDownloadCard/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/ReminderCard/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/ReminderCard/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/ScheduledJobCreatedCard/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/ScheduledJobCreatedCard/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/TextResponse/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/TextResponse/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/TextResponse/rules.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/TextResponse/rules.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/ToolApprovalRequest/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/ToolApprovalRequest/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/Assistant/index.tsx differ
+Files src/screens/WorkspaceChat/ChatHistory/Messages/User/index.tsx and src/screens/WorkspaceChat/ChatHistory/Messages/User/index.tsx differ
+Files src/screens/WorkspaceChat/PromptInput/Actions/Attachments/index.tsx and src/screens/WorkspaceChat/PromptInput/Actions/Attachments/index.tsx differ
+Files src/screens/WorkspaceChat/PromptInput/Actions/Settings/Files/Container/empty.tsx and src/screens/WorkspaceChat/PromptInput/Actions/Settings/Files/Container/empty.tsx differ
+Files src/screens/WorkspaceChat/PromptInput/Actions/Settings/Files/Container/index.tsx and src/screens/WorkspaceChat/PromptInput/Actions/Settings/Files/Container/index.tsx differ
+Files src/screens/WorkspaceChat/PromptInput/Actions/Settings/Files/index.tsx and src/screens/WorkspaceChat/PromptInput/Actions/Settings/Files/index.tsx differ
+Files src/screens/WorkspaceChat/PromptInput/Actions/Settings/ResetChat/index.tsx and src/screens/WorkspaceChat/PromptInput/Actions/Settings/ResetChat/index.tsx differ
+Files src/screens/WorkspaceChat/PromptInput/Actions/Settings/Tools/index.tsx and src/screens/WorkspaceChat/PromptInput/Actions/Settings/Tools/index.tsx differ
+Files src/screens/WorkspaceChat/PromptInput/Actions/Settings/index.tsx and src/screens/WorkspaceChat/PromptInput/Actions/Settings/index.tsx differ
+Files src/screens/WorkspaceChat/PromptInput/index.tsx and src/screens/WorkspaceChat/PromptInput/index.tsx differ
+Files src/screens/WorkspaceChat/index.tsx and src/screens/WorkspaceChat/index.tsx differ
+Files src/screens/WorkspaceSettings/Main/index.tsx and src/screens/WorkspaceSettings/Main/index.tsx differ
+Files src/screens/WorkspaceSettings/NumericInput/index.tsx and src/screens/WorkspaceSettings/NumericInput/index.tsx differ
+Files src/screens/WorkspaceSettings/TextInput/index.tsx and src/screens/WorkspaceSettings/TextInput/index.tsx differ
+Files src/utils/AiProviders/OpenRouterProvider/index.ts and src/utils/AiProviders/OpenRouterProvider/index.ts differ
+Files src/utils/DeepLinks/index.ts and src/utils/DeepLinks/index.ts differ
+Files src/utils/PushNotifications/index.ts and src/utils/PushNotifications/index.ts differ
+Files src/utils/Telemetry/index.ts and src/utils/Telemetry/index.ts differ
+Files src/utils/ToolsManager/tools/getLocation/index.ts and src/utils/ToolsManager/tools/getLocation/index.ts differ
+Files src/utils/ToolsManager/tools/webSearch/index.ts and src/utils/ToolsManager/tools/webSearch/index.ts differ
+Only in src/utils: brand.ts
+Files src/utils/changelog.ts and src/utils/changelog.ts differ
+Files src/utils/chat/export/markdown.ts and src/utils/chat/export/markdown.ts differ
+Files src/utils/chat/export/pdf/branding.ts and src/utils/chat/export/pdf/branding.ts differ
+Files src/utils/chat/export/pdf/logo.ts and src/utils/chat/export/pdf/logo.ts differ
+Files src/utils/chat/export/text.ts and src/utils/chat/export/text.ts differ
+Files src/utils/chatgpt/auth.ts and src/utils/chatgpt/auth.ts differ
+Files src/utils/documents/logoLight.ts and src/utils/documents/logoLight.ts differ
+Files src/utils/documents/shared.ts and src/utils/documents/shared.ts differ
+Only in src/utils: endpoints.ts
+Files src/utils/highlights.ts and src/utils/highlights.ts differ
+Files src/utils/paths.ts and src/utils/paths.ts differ
+Files src/utils/theme.ts and src/utils/theme.ts differ
+Files yarn.lock and yarn.lock differ

@@ -1,0 +1,178 @@
+name: Android Debug APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/android-debug.yml"
+
+concurrency:
+  group: android-debug-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-debug:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      HUSKY: "0"
+      CI: "true"
+      NODE_OPTIONS: "--max-old-space-size=4096"
+      ANDROID_NDK_VERSION: "27.1.12297006"
+      ANDROID_BUILD_TOOLS_VERSION: "36.0.0"
+      ANDROID_PLATFORM: "android-36"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20.19.5
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.19.5"
+
+      - name: Enable Yarn 1.22.22 (from packageManager)
+        run: |
+          corepack enable
+          corepack prepare yarn@1.22.22 --activate
+          yarn --version
+
+      - name: Cache Yarn packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/yarn
+          key: yarn-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            yarn-${{ runner.os }}-
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install Android SDK components
+        run: |
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          if [ ! -x "$SDKMANAGER" ]; then
+            echo "sdkmanager not found at $SDKMANAGER"
+            ls -la "$ANDROID_HOME" || true
+            exit 1
+          fi
+          yes | "$SDKMANAGER" --licenses > /dev/null || true
+          "$SDKMANAGER" \
+            "platforms;${ANDROID_PLATFORM}" \
+            "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
+            "ndk;${ANDROID_NDK_VERSION}" \
+            "cmake;3.22.1"
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('android/**/*.gradle', 'android/gradle/wrapper/gradle-wrapper.properties', 'android/gradle.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      # postinstall runs patch-package and llama.rn downloads the prebuilt librnllama*.so files.
+      # Firebase was removed and yarn.lock was pruned by script. If Yarn still wants to adjust the
+      # lockfile, fall back to a normal install and publish the updated yarn.lock as an artifact.
+      - name: Install dependencies
+        run: |
+          if ! yarn install --frozen-lockfile --network-timeout 600000; then
+            echo "::warning::yarn.lock needed changes - retrying without --frozen-lockfile"
+            yarn install --network-timeout 600000
+            mkdir -p ci-artifacts && cp yarn.lock ci-artifacts/yarn.lock
+          fi
+
+      - name: TypeScript check (informational)
+        continue-on-error: true
+        run: yarn typecheck
+
+      - name: Unit tests (informational)
+        continue-on-error: true
+        run: yarn test --ci --passWithNoTests
+
+      - name: Verify llama.rn native libraries
+        run: |
+          JNI_DIR="node_modules/llama.rn/android/src/main/jniLibs"
+          count_libs() { find "$JNI_DIR" -name 'librnllama*.so' 2>/dev/null | wc -l; }
+          echo "librnllama*.so found after install: $(count_libs)"
+          if [ "$(count_libs)" -eq 0 ]; then
+            echo "Native libraries missing - retrying the llama.rn download once"
+            node ./node_modules/llama.rn/install/download-native-artifacts.js --force
+          fi
+          if [ "$(count_libs)" -eq 0 ]; then
+            echo "::error::llama.rn native libraries (librnllama*.so) are still missing in $JNI_DIR"
+            exit 1
+          fi
+          find "$JNI_DIR" -name 'librnllama*.so' | sort
+
+      # .env.example only has empty placeholders. It lets react-native-config's dotenv.gradle run.
+      # No signing secrets are used: the debug build is signed with the repo's debug.keystore.
+      - name: Create empty .env from .env.example
+        run: cp .env.example .env
+
+      # A debug build normally expects a Metro dev server. Bundle the JS into the APK so the
+      # file can be installed and launched on a phone without Metro.
+      - name: Bundle JavaScript into the APK assets
+        run: |
+          mkdir -p android/app/src/main/assets android/app/src/main/res
+          npx react-native bundle \
+            --platform android \
+            --dev false \
+            --entry-file index.js \
+            --bundle-output android/app/src/main/assets/index.android.bundle \
+            --assets-dest android/app/src/main/res
+          ls -la android/app/src/main/assets/index.android.bundle
+
+      - name: Build debug APK
+        working-directory: android
+        run: |
+          chmod +x ./gradlew
+          ./gradlew assembleDebug --no-daemon --stacktrace
+
+      - name: Locate APK
+        id: apk
+        run: |
+          APK="android/app/build/outputs/apk/debug/app-debug.apk"
+          if [ ! -f "$APK" ]; then
+            echo "::error::Expected APK not found at $APK"
+            find android/app/build/outputs -name '*.apk' || true
+            exit 1
+          fi
+          ls -la "$APK"
+          echo "path=$APK" >> "$GITHUB_OUTPUT"
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexvora-llm-studio-debug-apk
+          path: ${{ steps.apk.outputs.path }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload updated yarn.lock (only if Yarn changed it)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: updated-yarn-lock
+          path: ci-artifacts/yarn.lock
+          if-no-files-found: ignore
+
+      - name: Upload Gradle reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-failure-reports
+          path: |
+            android/app/build/reports
+            android/build/reports
+          if-no-files-found: ignore
+          retention-days: 7
